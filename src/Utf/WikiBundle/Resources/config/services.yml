@@ -1,0 +1,4 @@
+services:
+#    utf_wiki.example:
+#        class: Utf\WikiBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

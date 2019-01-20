@@ -1,0 +1,37 @@
+# This file is a "template" of what your parameters.yml file should look like
+# Set parameters here that may be different on each deployment target of the app, e.g. development, staging, production.
+# https://symfony.com/doc/current/best_practices/configuration.html#infrastructure-related-configuration
+parameters:
+    database_host: 127.0.0.1
+    database_port: ~
+    database_name: symfony
+    database_user: root
+    database_password: ~
+    # You should uncomment this if you want to use pdo_sqlite
+    #database_path: '%kernel.project_dir%/var/data/data.sqlite'
+
+    # Config mail
+    mailbox_error: error@dev.mainsocle
+    mailer_transport: smtp
+    mailer_host: smtp.gmail.com
+    mailer_user: error.lebonartisan@gmail.com
+    mailer_password: null
+    mailer_port: 587
+    mailer_encryption: tls
+    mailer_auth: login
+    mail_error_subject: 'Erreur en dev main socle'
+
+    # A secret key that's used to generate certain security-related tokens
+    secret: ThisTokenIsNotSoSecretChangeIt
+
+    # RabbitMQ
+    rabbit_mq.host: localhost
+    rabbit_mq.port: 5672
+    rabbit_mq.user: guest
+    rabbit_mq.password: guest
+    rabbit_mq.exchange_name: batiweb-socle
+
+    # Config de l'environnement de test
+    config_test.autoRollback: true
+    config_test.backupGlobals: false
+    config_test.recreateDatabase: true

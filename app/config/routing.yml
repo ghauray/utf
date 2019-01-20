@@ -1,0 +1,11 @@
+utf_wiki:
+    resource: "@UtfWikiBundle/Resources/config/routing.yml"
+    prefix:   /
+
+utf_core:
+    resource: "@UtfCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
+#app:
+#    resource: '@AppBundle/Controller/'
+#    type: annotation

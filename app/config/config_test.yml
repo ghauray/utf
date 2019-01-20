@@ -1,0 +1,44 @@
+imports:
+    - { resource: config_dev.yml }
+
+framework:
+    test: ~
+    session:
+        storage_id: session.storage.mock_file
+    profiler:
+        collect: false
+
+web_profiler:
+    toolbar: false
+    intercept_redirects: false
+
+swiftmailer:
+    disable_delivery: true
+
+# Config de test
+parameters:
+    config_test:
+        autoRollback: "%config_test.autoRollback%"
+        backupGlobals: "%config_test.backupGlobals%"
+        recreateDatabase: "%config_test.recreateDatabase%" # In bootstrap-test
+
+
+# Mock de test
+services:
+  BatiwebConsumerMock:
+    class: Batiweb\Socle\Test\Mock\BatiwebConsumerMock
+
+# RabbitMQ
+old_sound_rabbit_mq:
+    producers:
+        test1:
+            connection:       default
+            exchange_options: {name: 'test1', type: direct}
+    consumers:
+        test1:
+            connection:       default
+            exchange_options: {name: 'test1', type: direct}
+            queue_options:    {name: 'test1'}
+            callback:         BatiwebConsumerMock
+            idle_timeout:           0
+            idle_timeout_exit_code: 0

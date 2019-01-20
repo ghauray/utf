@@ -1,0 +1,3 @@
+utf_core_homepage:
+    path:     /
+    defaults: { _controller: UtfCoreBundle:Default:index }

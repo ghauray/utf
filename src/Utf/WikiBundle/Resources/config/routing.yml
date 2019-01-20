@@ -1,0 +1,3 @@
+utf_wiki_homepage:
+    path:     /
+    defaults: { _controller: UtfWikiBundle:Default:index }

@@ -1,0 +1,35 @@
+<phpunit bootstrap="../bootstrap-test.php" backupGlobals="false"
+         backupStaticAttributes="false" processIsolation="false" verbose="true">
+
+    <php>
+        <ini name="memory_limit" value="1024M" />
+        <env name="SYMFONY_DEPRECATIONS_HELPER" value="weak" />
+        <env name="KERNEL_CLASS" value="AppKernel" />
+    </php>
+
+    <testsuites>
+        <!--
+        Exemple de testsuite
+        <testsuite name="TU-ADWORDS">
+            <directory >../src/Etravaux/AdwordsBundle/Test/</directory>
+        </testsuite>-->
+    </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">../src/</directory>
+            <!-- add more directories -->
+            <exclude>
+                <directory suffix=".php">../vendor/</directory>
+                <!-- add more directories with relative or absolute path -->
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-html" target="./codeCoverage" charset="UTF-8" yui="true" highlight="false" lowUpperBound="35"  highLowerBound="70" />
+        <log type="coverage-clover" target="./codeCoverage/codeCoverage.xml"/>
+        <log type="metrics-xml" target="./metrics/metrics.xml"/>
+        <log type="test-xml" target="./testResults/logfile.xml" logIncompleteSkipped="false"/>
+    </logging>
+</phpunit>

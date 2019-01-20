@@ -1,0 +1,4 @@
+services:
+#    utf_core.example:
+#        class: Utf\CoreBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]
