@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    {#<link rel="icon" href="{{ asset('/favicon-ico.ico') }}" type="image/x-icon"/>
+    <link rel="icon" type="image/png" sizes="16x16"  href="{{ asset('favicon-ico.ico') }}"/>
+    <link rel="icon" type="image/png" sizes="32x32"  href="{{ asset('favicon-ico.ico') }}"/>#}
+
+    <title>{% block title %}{% endblock %}</title>
+
+    {% block javascriptsHead %}
+        <script type="text/javascript" src="{{ asset('build/js.js') }}"></script>
+    {% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('build/css.css') }}" />
+    {% endblock %}
+
+    {% block additionalHead %}
+        {{ include("additional-head.html.twig") }}
+    {% endblock %}
+</head>
+<body>
+{% block additionalBody %}
+    {{ include("additional-body.html.twig") }}
+{% endblock %}
+
+{# main wrapper. Contains all visibles things #}
+<div class="wrapper">
+    {% block menuleft %}{% endblock %}
+    {% block header %}{% endblock %}
+
+    <section class="wrapper-content">
+        {% block body %}{% endblock %}
+    </section>
+
+    {% block footer %}{% endblock %}
+</div>
+
+{% block javascripts %}{% endblock %}
+
+</body>
+</html>

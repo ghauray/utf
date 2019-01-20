@@ -1,0 +1,6 @@
+services:
+    abstractservice:
+        abstract: true
+        class: Utf\CoreBundle\Service\AbstractService
+        calls:
+         - [setLogger, ["@Logger"]]

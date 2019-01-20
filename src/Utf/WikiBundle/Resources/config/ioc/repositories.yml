@@ -1,0 +1,6 @@
+services:
+  page.repository:
+    class: Utf\WikiBundle\Repository\PageRepository
+    factory: ["@doctrine.orm.entity_manager", getRepository]
+    arguments:
+      - Utf\WikiBundle\Entity\Page

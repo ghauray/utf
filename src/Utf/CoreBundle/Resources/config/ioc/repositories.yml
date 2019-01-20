@@ -1,0 +1,4 @@
+services:
+    abstractrepository:
+        abstract: true
+        class: Utf\CoreBundle\Repository\AbstractRepository
